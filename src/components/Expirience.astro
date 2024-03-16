@@ -1,0 +1,27 @@
+---
+import ExpirienceItem from "./ExpirienceItem.astro"
+
+const EXPERIENCE = [
+    {
+        date: 'Junio 2023 - Actual',
+        title: 'Coovitel',
+        description: 'Liderar el desarrollo de productos que contibuyen a mas de 15.000 asociados, mejorando su experiencia, alcance de productos, servicios y atencion, como; desarrollo de digiturnos, simuladores, dashboards, administrables entre otros.'
+    },
+    {
+        date: 'Diciembre 2022 - Febrero 2023',
+        title: 'Linkend Farmers',
+        description: 'Desarrollo de app movile para la industria agricultura, buscamosromper las barreras del mercado con los campesinos o pequeños agricultores y que puedan tener un mayor alcance de sus productos.'
+    }
+]
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-4">                  
+    {
+        EXPERIENCE.map(expirience => (
+            <li class="mb-10 ms-4">
+                <ExpirienceItem {...expirience}/>
+            </li>
+        ))
+    }
+</ol>
+

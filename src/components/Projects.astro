@@ -1,0 +1,70 @@
+---
+import SocialPill from './icons/SocialPill.astro';
+import Github from './icons/GithubIcon.astro';
+import Tailwind from './icons/Tailwind.astro';
+import Myicon from './icons/MyIcon.astro';
+
+const TAGS = {
+    ASTRO: {
+        name: "Astro",
+        class: "bg-black text white",
+        icon: Myicon,
+    },
+    TAILWIND: {
+        name: "Tailwind CSS",
+        class: "bg-white text-[#73bcf6]",
+        icon: Tailwind,
+    },
+}
+
+const PROJECTS = [
+    {
+        title: 'Recaudos Impuestos',
+        description: 'App web para el registro de recaudos de impuestos, generando certificados en formato pdf y txt',
+        link: '',
+        github: 'https://github.com/ManuRodriguezC/recaudos-impuestos-app',
+        image: '/projects/recaudosapp.webp',
+        tags: [TAGS.ASTRO, TAGS.TAILWIND]
+    },
+    {
+        title: 'Dashboard Digiturno',
+        description: 'Dashboard de los datos recopilados por el digiturno en las difernetes sucursales, crea graficas de analisis, porcentajes y estadisticas de los turnos y los servicios tomados por los asociados.',
+        link: '',
+        github: '',
+        image: '/projects/dashboard.webp',
+        tags: [TAGS.ASTRO, TAGS.TAILWIND]
+    }
+]
+---
+
+{
+    PROJECTS.map(({title, description, link, github, image, tags }) => (
+        <article>
+            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+            <p class="text-lg mb-4 text-pretty">{description}</p>
+            <ul>
+                {tags.map((tag) => (
+                    <li>
+                        <tag.icon class="size-4" />
+                        {tag.name}
+                    </li>
+                ))}
+            </ul>
+            <img class="rounded shadow-2xl shadow-white/10" src={image} alt={title}/>
+            {
+                link && (
+                    <SocialPill href={link}>
+    					<Github class="size-4 md:size-6"/>
+                    </SocialPill>
+                )
+            }
+            {
+                github && (
+                    <SocialPill href={github}>
+    					<Github class="size-4 md:size-6"/>
+                    </SocialPill>
+                )
+            }
+        </article>
+    ))
+}

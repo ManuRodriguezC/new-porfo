@@ -1,0 +1,65 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Badge from '../components/Badge.astro';
+import Linkedin from '../components/icons/LinkedinIcon.astro';
+import Github from '../components/icons/GithubIcon.astro';
+import Download from '../components/icons/DownloadIcon.astro';
+import Briefcase from '../components/icons/Briefcase.astro';
+import CodeIcon from '../components/icons/CodeIcon.astro';
+import SocialPill from '../components/icons/SocialPill.astro';
+import Expirience from '../components/Expirience.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import Projects from '../components/Projects.astro';
+---
+
+<Layout
+	title="Portafolio Manu Rodriguez - Desarrollador y Programador FullStack"
+	description="Desarrollador fullstack apacionado por desarrollar y crear productos que contribuyan a la comunidad y a las personas."
+>
+	<main class="px-4">
+		<SectionContainer id="top" class="py-40 pb-22">
+			<img class="rounded-full size-[100px] mb-6" src="/manu.webp" alt="Manudev photo">
+			<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex justify-center flex-row gap-x-6 pb-6 lg:pb-4">
+				Hola, soy Manu Rodriguez <div class="flex justify-center items-center">
+					<a href="https://www.linkedin.com/in/manurodriguezdev/" target="_blank" class="hover:opacity-80 transition-all duration-250"><Badge>Disponible</Badge></a>
+				</div>
+			</h1>
+			<h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]"> Soy un apasionado <span class="text-yellow-200/70">Desarrollador Fullstack</span> con experiencia en la implementación de
+				<span class="text-yellow-200/70">metodologías ágiles</span> como SCRUM para un desarrollo agil y eficiente.
+			</h2>
+			<nav class="flex gap-2 mt-6 flex-wrap">
+				<SocialPill href="https://www.linkedin.com/in/manurodriguezdev/">
+					<Linkedin class="size-4 md:size-6" href=""/>
+					LinkedIn
+				</SocialPill>
+				<SocialPill href="https://github.com/ManuRodriguezC">
+					<Github class="size-4 md:size-6"/>
+					Github
+				</SocialPill>
+				<SocialPill href="/Manuel Rodriguez CV.pdf">
+					<Download class="size-4 md:size-6" />
+					Download Cv
+				</SocialPill>
+			</nav>
+		</SectionContainer>
+
+		<SectionContainer id="experiencia">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-4 items-center">
+				<Briefcase class="size-8" />
+				Experiencia Laboral
+			</h2>
+			<Expirience />
+		</SectionContainer>
+
+		<SectionContainer id="experiencia">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-4 items-center">
+				<CodeIcon class="size-8" />
+				Proyectos
+			</h2>
+			<Projects />
+		</SectionContainer>
+	</main>
+</Layout>
+
+<style>
+</style>
