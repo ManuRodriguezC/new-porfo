@@ -1,20 +1,54 @@
 ---
-import SocialPill from './icons/SocialPill.astro';
+import LinkButton from "./LinkButton.astro"
 import Github from './icons/GithubIcon.astro';
 import Tailwind from './icons/Tailwind.astro';
 import Myicon from './icons/MyIcon.astro';
+import Link from "./icons/Link.astro"
+import Mysql from "./icons/MySQL.astro"
+import Python from "./icons/Python.astro"
+import Html from "./icons/Html.astro"
+import Django from "./icons/Django.astro"
+import JavaScript from "./icons/JavaScript.astro"
+import React from "./icons/React.astro"
+import CssIcon from "./icons/Css.astro"
 
 const TAGS = {
     ASTRO: {
         name: "Astro",
-        class: "bg-black text white",
         icon: Myicon,
     },
     TAILWIND: {
         name: "Tailwind CSS",
-        class: "bg-white text-[#73bcf6]",
         icon: Tailwind,
     },
+    MYSQL: {
+        name: "MySQL",
+        icon: Mysql
+    },
+    PYTHON: {
+        name: "Python",
+        icon: Python,
+    },
+    HTML: {
+        name: "HTML",
+        icon: Html,
+    },
+    DJANGO: {
+        name: "Django",
+        icon: Django,
+    },
+    JAVASCRIPT: {
+        name: "JavaScript",
+        icon: JavaScript,
+    },
+    REACT: {
+        name: "React",
+        icon: React
+    },
+    CSS: {
+        name: "CSS",
+        icon: CssIcon,
+    }
 }
 
 const PROJECTS = [
@@ -24,47 +58,82 @@ const PROJECTS = [
         link: '',
         github: 'https://github.com/ManuRodriguezC/recaudos-impuestos-app',
         image: '/projects/recaudosapp.webp',
-        tags: [TAGS.ASTRO, TAGS.TAILWIND]
+        tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.MYSQL, TAGS.PYTHON, TAGS.HTML, TAGS.DJANGO]
     },
     {
         title: 'Dashboard Digiturno',
         description: 'Dashboard de los datos recopilados por el digiturno en las difernetes sucursales, crea graficas de analisis, porcentajes y estadisticas de los turnos y los servicios tomados por los asociados.',
         link: '',
-        github: '',
+        github: 'https://github.com/COOVITEL/Digi_admin',
         image: '/projects/dashboard.webp',
-        tags: [TAGS.ASTRO, TAGS.TAILWIND]
+        tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.JAVASCRIPT, TAGS.REACT]
+    },
+    {
+        title: 'Digiturno',
+        description: 'Digiturno desarrollado para el control de ingreso y servicios solicitados de aca uno de los asesores que visite las diferentes sucursales, recopilando datos como, tipo de servicio, tiempos de ingreso, atencion, salida, calificacion de servicio entre otros.',
+        link: '',
+        github: 'https://github.com/COOVITEL/Digi_turn',
+        image: '/projects/Digiturn.webp',
+        tags: [TAGS.REACT, TAGS.CSS, TAGS.PYTHON, TAGS.DJANGO, TAGS.MYSQL]
+    },
+    {
+        title: 'Simulador CDAT',
+        description: 'Simulador de inverciones de CDAT el cual contribuye a los asociados a proyectar los intereses generados a un monto y plazo determinado.',
+        link: 'https://cdat.coovitel.coop/',
+        github: 'https://github.com/COOVITEL/Simuladores',
+        image: '/projects/SimuladorCDAT.webp',
+        tags: [TAGS.REACT, TAGS.CSS]
     }
 ]
 ---
 
-{
-    PROJECTS.map(({title, description, link, github, image, tags }) => (
-        <article>
-            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
-            <p class="text-lg mb-4 text-pretty">{description}</p>
-            <ul>
-                {tags.map((tag) => (
-                    <li>
-                        <tag.icon class="size-4" />
-                        {tag.name}
-                    </li>
-                ))}
-            </ul>
-            <img class="rounded shadow-2xl shadow-white/10" src={image} alt={title}/>
-            {
-                link && (
-                    <SocialPill href={link}>
-    					<Github class="size-4 md:size-6"/>
-                    </SocialPill>
-                )
-            }
-            {
-                github && (
-                    <SocialPill href={github}>
-    					<Github class="size-4 md:size-6"/>
-                    </SocialPill>
-                )
-            }
+<div class="flex flex-col gap-y-16">
+    {
+        PROJECTS.map(({ image, title, description, tags, link, github }) => (
+        <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+            <div class="w-full md:w-1/2">
+                <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+                    <img alt="Reacaudos app" class="object-cover object-top w-full h-66 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" src={image} />
+                </div>
+            </div>
+    
+            <div class="w-full md:w-1/2 md:max-w-lg">
+                <h3 class="text-2xl font-bold text-yellow-200/60">
+                    {title}
+                </h3>
+                <div class="flex flex-wrap mt-2">
+                    <ul class="flex flex-wrap mb-2 gap-2">
+                        {tags.map((tag) => (
+                        <li>
+                            <span
+                            class={`flex gap-x-2 rounded-full text-xs text-white bg-black py-1 px-2 `}
+                            >
+                            <tag.icon class="size-4" />
+                            {tag.name}
+                            </span>
+                        </li>
+                        ))}
+                    </ul>
+            
+                <div class="mt-2 text-white-200">{description}</div>
+                    <footer class="flex items-end justify-start mt-4 gap-x-4">
+                        {github && (
+                        <LinkButton href={github}>
+                            <Github class="size-6" />
+                            Code
+                            
+                        </LinkButton>
+                        )}
+                        {link && (
+                        <LinkButton href={link}>
+                            <Link class="size-4" />
+                            Preview
+                        </LinkButton>
+                        )}
+                    </footer>
+                </div>
+            </div>
         </article>
-    ))
-}
+        ))
+    }
+  </div>
