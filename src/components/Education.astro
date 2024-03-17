@@ -1,0 +1,41 @@
+---
+import EducactionItem from "./EducactionItem.astro"
+
+const EDUCATION = [
+    {
+        date: '2022 - Actual',
+        title: 'Desarrollador de Software',
+        institution: 'Universidad Nacional Abierta y a Distancia',
+    },
+    {
+        date: 'Julio 2023 - Marzo 2024',
+        title: 'Web Stack - FullStack',
+        institution: 'Holberton School',
+    },
+    {
+        date: 'Mayo - Junio 2023',
+        title: 'Base de datos, Modularizacion y Deploy',
+        institution: 'Platzi',
+    },
+    {
+        date: 'Marzo - Abril 2023',
+        title: 'Master en Python',
+        institution: 'Udemy',
+    },
+    {
+        date: 'Junio 2022 - Febrero 2023',
+        title: 'Fundation of Software Development',
+        institution: 'Holberton School',
+    }
+]
+---
+<ol class="relative border-s border-gray-200 mx-10">
+    {
+        EDUCATION.map(education => (
+            <li class="mb-10 ms-4">
+                <EducactionItem {...education} />
+            </li>
+        ))
+    }
+</ol>
+

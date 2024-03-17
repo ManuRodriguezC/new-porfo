@@ -11,6 +11,9 @@ import Django from "./icons/Django.astro"
 import JavaScript from "./icons/JavaScript.astro"
 import React from "./icons/React.astro"
 import CssIcon from "./icons/Css.astro"
+import Node from "./icons/Node.astro"
+import Flutter from "./icons/Flutter.astro"
+import Flask from "./icons/Flask.astro"
 
 const TAGS = {
     ASTRO: {
@@ -48,6 +51,18 @@ const TAGS = {
     CSS: {
         name: "CSS",
         icon: CssIcon,
+    },
+    NODE: {
+        name: "Node.js",
+        icon: Node
+    },
+    FLUTTER: {
+        name: "Flutter",
+        icon: Flutter
+    },
+    FLASK: {
+        name: "Flask",
+        icon: Flask
     }
 }
 
@@ -74,7 +89,7 @@ const PROJECTS = [
         link: '',
         github: 'https://github.com/COOVITEL/Digi_turn',
         image: '/projects/Digiturn.webp',
-        tags: [TAGS.REACT, TAGS.CSS, TAGS.PYTHON, TAGS.DJANGO, TAGS.MYSQL]
+        tags: [TAGS.REACT, TAGS.CSS, TAGS.PYTHON, TAGS.DJANGO, TAGS.MYSQL, TAGS.JAVASCRIPT]
     },
     {
         title: 'Simulador CDAT',
@@ -82,7 +97,39 @@ const PROJECTS = [
         link: 'https://cdat.coovitel.coop/',
         github: 'https://github.com/COOVITEL/Simuladores',
         image: '/projects/SimuladorCDAT.webp',
-        tags: [TAGS.REACT, TAGS.CSS]
+        tags: [TAGS.REACT, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.NODE]
+    },
+    {
+        title: 'Simulador Cooviahorro',
+        description: 'Simulador de ahorro programado con diferentes tipos de ahorro y tasas, generando el interes y ganancia final a determinado numero de meses.',
+        link: 'https://cooviahorro.coovitel.coop/',
+        github: 'https://github.com/COOVITEL/Simuladores',
+        image: '/projects/SimuladorCooviahorro.webp',
+        tags: [TAGS.REACT, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.NODE]
+    },
+    {
+        title: 'Administrador de Tasas de inversion',
+        description: 'Administrador de las tasas que se pueden manejar en los diferentes simuladores, con rangos de valores y numero de dias.',
+        link: '',
+        github: 'https://github.com/COOVITEL/Administrables',
+        image: '/projects/AdminTasas.webp',
+        tags: [TAGS.DJANGO, TAGS.PYTHON, TAGS.CSS, TAGS.JAVASCRIPT, ]
+    },
+    {
+        title: 'Linkend Farmers',
+        description: 'App movile desarrollada para conectar a los pequeños agricultores con las principales empresas de exportacion, registro de usuarios y registro de productos para comerciar.',
+        link: '',
+        github: 'https://github.com/ManuRodriguezC/App_Agriculture',
+        image: '/projects/LinkendFarmers.webp',
+        tags: [TAGS.PYTHON, TAGS.FLUTTER, TAGS.FLASK]
+    },
+    {
+        title: 'AirBnB Clone',
+        description: 'App clone de AirBnB la cual permite hacer uso de CRUD para la creacion de hospejades conectados a cuidades, hospedador, lugar, entre otros.',
+        link: '',
+        github: 'https://github.com/ManuRodriguezC/holbertonschool-AirBnB_clone_v3',
+        image: '/projects/AirBnB.webp',
+        tags: [TAGS.PYTHON, TAGS.FLASK, TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT]
     }
 ]
 ---
@@ -90,7 +137,7 @@ const PROJECTS = [
 <div class="flex flex-col gap-y-16">
     {
         PROJECTS.map(({ image, title, description, tags, link, github }) => (
-        <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+        <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0 mt-6">
             <div class="w-full md:w-1/2">
                 <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
                     <img alt="Reacaudos app" class="object-cover object-top w-full h-66 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" src={image} />
@@ -98,7 +145,7 @@ const PROJECTS = [
             </div>
     
             <div class="w-full md:w-1/2 md:max-w-lg">
-                <h3 class="text-2xl font-bold text-yellow-200/60">
+                <h3 class="text-2xl font-bold text-yellow-200/80">
                     {title}
                 </h3>
                 <div class="flex flex-wrap mt-2">
