@@ -4,3 +4,5 @@
 
 ## Lo hice con mucho cariño y con ayuda me Midu.
 
+![Manu Rodriguez](https://github.com/ManuRodriguezC/new-porfo/blob/main/public/porfo.webp)
+
