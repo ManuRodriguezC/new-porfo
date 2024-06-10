@@ -1,39 +1,90 @@
 ---
 import Github from './icons/GithubIcon.astro';
 import Tailwind from './icons/Tailwind.astro';
-import C from './icons/C.astro';
-import Html from "./icons/Html.astro"
-import Django from "./icons/Django.astro"
-import JavaScript from "./icons/JavaScript.astro"
-import React from "./icons/React.astro"
-import CssIcon from "./icons/Css.astro"
-import Node from "./icons/Node.astro"
-import Flutter from "./icons/Flutter.astro"
-import Flask from "./icons/Flask.astro"
+import Html from "./icons/Html.astro";
+import Django from "./icons/Django.astro";
+import JavaScript from "./icons/JavaScript.astro";
+import React from "./icons/React.astro";
+import CssIcon from "./icons/Css.astro";
+import Node from "./icons/Node.astro";
+import Flutter from "./icons/Flutter.astro";
+import Flask from "./icons/Flask.astro";
 import MyIcon from './icons/MyIcon.astro';
 import MySQL from './icons/MySQL.astro';
-import TypeScript from './icons/TypeScript.astro'
-import Express from './icons/Express.astro'
-import Next from './icons/Next.astro'
-import Git from './icons/Git.astro'
+import TypeScript from './icons/TypeScript.astro';
+import Express from './icons/Express.astro';
+import Next from './icons/Next.astro';
+import Git from './icons/Git.astro';
+import './styles/skills.css';
+
 ---
 
-<div class="flex flex-wrap justify-center gap-5">
-    <img class="h-24" src="/python.webp" alt="">
-    <Django class="size-20" />
-    <Flask class="size-20" />
-    <React class="size-20" />
-    <JavaScript class="size-20" />
-    <MyIcon class="size-20" />
-    <Node class="size-20" />
-    <TypeScript class="size-20" />
-    <Express class="size-20" />
-    <Next class="size-20" />
-    <Github class="size-20" />
-    <Git class="size-20" />
-    <Tailwind class="size-20"/>
-    <MySQL class="size-20" />
-    <Flutter class="size-20" />
-    <CssIcon class="size-20" />
-    <Html class="size-20" />
+<div class="marquee">
+    <ul class="marquee-content">
+        <li>
+            <img class="h-24" src="/python.webp" alt="">
+        </li>
+        <li>
+            <Django class="size-20" />
+        </li>
+        <li>
+            <Flask class="size-20" />
+        </li>
+        <li>
+            <React class="size-20" />
+        </li>
+        <li>
+            <JavaScript class="size-20" />
+        </li>
+        <li>
+            <MyIcon class="size-20" />
+        </li>
+        <li>
+            <Node class="size-20" />
+        </li>
+        <li>
+            <TypeScript class="size-20" />
+        </li>
+        <li>
+            <Express class="size-20" />
+        </li>
+        <li>
+            <Next class="size-20" />
+        </li>
+        <li>
+            <Github class="size-20" />
+        </li>
+        <li>
+            <Git class="size-20" />
+        </li>
+        <li>
+            <Tailwind class="size-20"/>
+        </li>
+        <li>
+            <MySQL class="size-20" />
+        </li>
+        <li>
+            <Flutter class="size-20" />
+        </li>
+        <li>
+            <CssIcon class="size-20" />
+        </li>
+        <li>
+            <Html class="size-20" />
+        </li>
+    </ul>
 </div>
+
+<script type="module">
+    document.addEventListener('DOMContentLoaded', () => {
+      const root = document.documentElement;
+      const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue("--marquee-elements-displayed");
+      const marqueeContent = document.querySelector("ul.marquee-content");
+  
+      root.style.setProperty("--marquee-elements", marqueeContent.children.length);
+  
+      for(let i = 0; i < parseInt(marqueeElementsDisplayed); i++) {
+        marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
+      }
+    });
+  </script>
