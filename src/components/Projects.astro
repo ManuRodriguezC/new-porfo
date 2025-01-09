@@ -68,6 +68,22 @@ const TAGS = {
 
 const PROJECTS = [
     {
+        title: 'Fainox Group S.A.S',
+        description: 'Desarrollo y diseño de la pagina web de Fainox Group, dedicada a la fabricación y comercialización de productos para el sector industrial y suplementos para la produccion de productos he insumos agricola y alimenticios.',
+        link: 'https://fainox.vercel.app/',
+        github: '',
+        image: '/projects/fainox.webp',
+        tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.REACT, TAGS.JAVASCRIPT, TAGS.HTML]
+    },
+    {
+        title: 'App PQRS',
+        description: 'App web para el registro de PQRS, dando control seguimiento, informes, estadisticas y respuesta a los asociados de forma rapida y eficiente.',
+        link: '',
+        github: '',
+        image: '/projects/pqrs.webp',
+        tags: [TAGS.PYTHON, TAGS.DJANGO, TAGS.HTML, TAGS.JAVASCRIPT, TAGS.TAILWIND, TAGS.MYSQL]
+    },
+    {
         title: 'Simulador Credito',
         description: 'Esta aplicación desarrolla diferentes tipos de simulaciones de créditos, por medio de controladores y registro de datos, implementa módulos para generar formularios y registros. Junto con autenticaciones, para crear, editar o eliminar tipos de créditos y tasas.',
         link: 'http://cootratiemposimulador.pythonanywhere.com/',
@@ -163,7 +179,7 @@ const PROJECTS = [
         PROJECTS.map(({ image, title, description, tags, link, github }) => (
         <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0 mt-6">
             <div class="w-full md:w-1/2">
-                <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+                <div class="relative h-auto flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
                     <img alt="Reacaudos app" class="object-cover object-top w-full h-66 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" src={image} />
                 </div>
             </div>
